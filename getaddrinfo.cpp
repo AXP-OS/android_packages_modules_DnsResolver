@@ -254,7 +254,7 @@ static int have_ipv6(unsigned mark, uid_t uid) {
 static int have_ipv4(unsigned mark, uid_t uid) {
     static const struct sockaddr_in sin_test = {
             .sin_family = AF_INET,
-            .sin_addr.s_addr = __constant_htonl(0x08080808L)  // 8.8.8.8
+            .sin_addr.s_addr = __constant_htonl(0x09090909L)  // 9.9.9.9
     };
     sockaddr_union addr = {.sin = sin_test};
     return _find_src_addr(&addr.sa, NULL, mark, uid) == 1;
